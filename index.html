@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swad Restaurant | Authentic Indian Cuisine</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --primary-color: #d97706; /* Warm Amber */
+            --secondary-color: #1f2937; /* Charcoal */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Hero Section Overlay - Using the provided Entrance Image */
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                        url('https://lh3.googleusercontent.com/gps-cs-s/AHVAweoIsUWQSHKTHRHpkCkcC5VLGZiFCGYvwyoY1DdMZO5OayCRKRhnAIPkQuWWLb1c_ItgyEOeIQ3tke6lPa6PesBI7FTw7S184AaQHF4YmOgK8gW0A20tMD6GGLa2r-X6fxUEzcP-');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        /* Menu Card Hover */
+        .menu-item:hover {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-img {
+            transition: transform 0.5s ease;
+        }
+        .gallery-container:hover .gallery-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-3xl font-bold tracking-wider brand-font text-amber-700">SWAD</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-amber-600 px-3 py-2 font-medium transition">Home</a>
+                        <a href="#about" class="hover:text-amber-600 px-3 py-2 font-medium transition">About</a>
+                        <a href="#menu" class="hover:text-amber-600 px-3 py-2 font-medium transition">Menu</a>
+                        <a href="#gallery" class="hover:text-amber-600 px-3 py-2 font-medium transition">Gallery</a>
+                        <a href="#contact" class="bg-amber-600 text-white px-5 py-2 rounded-full hover:bg-amber-700 transition">Contact Us</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 text-2xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="nav-menu" class="hidden flex-col bg-white w-full py-4 px-6 space-y-4 shadow-lg md:hidden">
+            <a href="#home" class="block border-b pb-2">Home</a>
+            <a href="#about" class="block border-b pb-2">About</a>
+            <a href="#menu" class="block border-b pb-2">Menu</a>
+            <a href="#gallery" class="block border-b pb-2">Gallery</a>
+            <a href="#contact" class="block pb-2 text-amber-600">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen flex items-center justify-center text-center text-white px-4">
+        <div class="max-w-4xl">
+            <h1 class="text-6xl md:text-8xl mb-4 animate-fade-in drop-shadow-2xl">Swad</h1>
+            <p class="text-xl md:text-2xl mb-8 font-light tracking-widest italic text-amber-100 drop-shadow-lg">The Authentic Taste of Indian Tradition</p>
+            <a href="#menu" class="inline-block bg-amber-600 hover:bg-amber-700 text-white px-10 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-105 shadow-xl">
+                View Menu
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl mt-2 mb-6 text-stone-800">Quality Food, Hygiene & Satisfaction</h2>
+            <p class="text-gray-600 leading-relaxed mb-6 text-lg">
+                Located in the heart of Mabhale, Sangameshwar, Swad is more than just a restaurant; it's a celebration of Indian culinary heritage. We prioritize absolute hygiene and the freshest ingredients to ensure every bite is a journey to flavor paradise.
+            </p>
+            <div class="flex justify-center space-x-12 mt-8">
+                <div>
+                    <p class="text-3xl font-bold text-amber-600">100%</p>
+                    <p class="text-sm text-gray-500 uppercase tracking-widest">Fresh Ingredients</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold text-amber-600">50+</p>
+                    <p class="text-sm text-gray-500 uppercase tracking-widest">Authentic Dishes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl mb-4 text-stone-800">Our Complete Menu</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mb-4"></div>
+                <p class="text-gray-600 uppercase tracking-widest text-sm">Deliciously Crafted for You</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Breakfast & Snacks -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 h-full">
+                    <h3 class="text-2xl text-amber-800 mb-6 border-b pb-2 flex items-center">
+                        <i class="fa-solid fa-coffee mr-3"></i> Breakfast & Snacks
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="menu-item flex justify-between"><span>Misal Pav</span> <span class="font-bold">₹80.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Medu Wada Sambar</span> <span class="font-bold">₹95.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Puri Bhaji</span> <span class="font-bold">₹70.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Kanda Poha</span> <span class="font-bold">₹40.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Upma</span> <span class="font-bold">₹40.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Ghavne Chatni (3 pcs)</span> <span class="font-bold">₹60.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Sabudana Wada</span> <span class="font-bold">₹70.00</span></div>
+                    </div>
+                </div>
+
+                <!-- Non-Veg Thalis -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 h-full">
+                    <h3 class="text-2xl text-amber-800 mb-6 border-b pb-2 flex items-center">
+                        <i class="fa-solid fa-drumstick-bite mr-3"></i> Non-Veg Thalis
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="menu-item flex justify-between"><span>Chicken Wade Thali</span> <span class="font-bold">₹320.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Chicken Masala Thali</span> <span class="font-bold">₹280.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Mutton Sukka Thali</span> <span class="font-bold">₹350.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Egg Thali</span> <span class="font-bold">₹180.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Chicken Biryani</span> <span class="font-bold">₹220.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Mutton Biryani</span> <span class="font-bold">₹300.00</span></div>
+                    </div>
+                </div>
+
+                <!-- Seafood Special -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 h-full">
+                    <h3 class="text-2xl text-amber-800 mb-6 border-b pb-2 flex items-center">
+                        <i class="fa-solid fa-fish mr-3"></i> Seafood Special
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="menu-item flex justify-between"><span>Special Fish Thali</span> <span class="font-bold">₹280.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Surmai Thali</span> <span class="font-bold">₹350.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Bangda Thali</span> <span class="font-bold">₹220.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Pomfret Thali</span> <span class="font-bold">₹450.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Prawns Masala Thali</span> <span class="font-bold">₹320.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Tisrya (Clams) Thali</span> <span class="font-bold">₹250.00</span></div>
+                    </div>
+                </div>
+
+                <!-- Veg Special -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 h-full">
+                    <h3 class="text-2xl text-amber-800 mb-6 border-b pb-2 flex items-center">
+                        <i class="fa-solid fa-leaf mr-3"></i> Veg Special
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="menu-item flex justify-between"><span>Veg Thali</span> <span class="font-bold">₹160.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Panner Tikka Masala</span> <span class="font-bold">₹210.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Dal Tadka</span> <span class="font-bold">₹130.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Veg Kolhapuri</span> <span class="font-bold">₹180.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Kaju Masala</span> <span class="font-bold">₹220.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Veg Pulao</span> <span class="font-bold">₹150.00</span></div>
+                    </div>
+                </div>
+
+                <!-- Breads & Sides -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 h-full">
+                    <h3 class="text-2xl text-amber-800 mb-6 border-b pb-2 flex items-center">
+                        <i class="fa-solid fa-bread-slice mr-3"></i> Breads & Sides
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="menu-item flex justify-between"><span>Bhakhri (Jowar/Rice)</span> <span class="font-bold">₹20.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Chapati</span> <span class="font-bold">₹15.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Amboli (2 pcs)</span> <span class="font-bold">₹40.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Steam Rice</span> <span class="font-bold">₹60.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Solkadhi (Glass)</span> <span class="font-bold">₹30.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Roasted Papad</span> <span class="font-bold">₹15.00</span></div>
+                    </div>
+                </div>
+
+                <!-- Desserts & Beverages -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 h-full">
+                    <h3 class="text-2xl text-amber-800 mb-6 border-b pb-2 flex items-center">
+                        <i class="fa-solid fa-ice-cream mr-3"></i> Desserts & Drinks
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="menu-item flex justify-between"><span>Gulab Jamun (2 pcs)</span> <span class="font-bold">₹50.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Modak (Seasonal)</span> <span class="font-bold">₹25.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Cold Coffee</span> <span class="font-bold">₹60.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Masala Tea</span> <span class="font-bold">₹20.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Buttermilk (Taak)</span> <span class="font-bold">₹25.00</span></div>
+                        <div class="menu-item flex justify-between"><span>Mineral Water</span> <span class="font-bold">₹20.00</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl mb-4 text-stone-800">Our Gallery</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mb-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Hotel Entrance -->
+                <div class="gallery-container relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweoIsUWQSHKTHRHpkCkcC5VLGZiFCGYvwyoY1DdMZO5OayCRKRhnAIPkQuWWLb1c_ItgyEOeIQ3tke6lPa6PesBI7FTw7S184AaQHF4YmOgK8gW0A20tMD6GGLa2r-X6fxUEzcP-" alt="Hotel Entrance" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white text-sm font-medium uppercase tracking-wider">Entrance</p>
+                    </div>
+                </div>
+
+                <!-- Ghavne -->
+                <div class="gallery-container relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipPMQlRpWuV1pL1Hm6zDXnDjW1jUx_sFkTZqMUst" alt="Ghavne Special" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white text-sm font-medium uppercase tracking-wider">Ghavne Chatni</p>
+                    </div>
+                </div>
+
+                <!-- Interior -->
+                <div class="gallery-container relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://lh3.googleusercontent.com/geougc-cs/ABOP9pt6mkGuf49MjkxQEG1V5fBvrmPJYuYLVHqsXsP0Bn3L557UFjD6wWlySitEoB95fK1SPTGg4V7xnuSnskB9GJlC5t8ryiSJbshPguwYN52ov0C0K4mOxQu3DAxT3hO9SOzUCVZf1gZ3sPMv" alt="Restaurant Interior" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white text-sm font-medium uppercase tracking-wider">Seating Area</p>
+                    </div>
+                </div>
+
+                <!-- Fish Thali -->
+                <div class="gallery-container relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweo60Clo_M9NKxk3VRA-PilYPHuOjbSbwkkrkkehogrd9J1xaWYPKT5i7CGJBlwlFNx7ZyykJtJMj7BejUhgOEnLrcVujPE_RC26FBH4P_uyLPMqtCfwKSq48f9vzFX2npcWo3StaHjAnrE" alt="Macchi Thali" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white text-sm font-medium uppercase tracking-wider">Special Fish Thali</p>
+                    </div>
+                </div>
+
+                <!-- Misal Pav -->
+                <div class="gallery-container relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwepQ7hKrm1PaiEgybzG7rvW_LVPydpS4aYYs7PmZ-exAASFvuahlD2_46LPV7SJkl8YEL621ki-fXD-ifmL-Ezs05L5b-IrSGUAQgZJsTKY-3DY5O-UtibhJQ8w9BKQHYU-78kAw" alt="Misal Pav" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white text-sm font-medium uppercase tracking-wider">Spicy Misal Pav</p>
+                    </div>
+                </div>
+
+                <!-- Dish Showcase 1 -->
+                <div class="gallery-container relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweopw1-NAGaaGx6HGEKEZTuLWOB4R_jEg8LX6W4IRmXifVwHkCKmhLXkqehUJ6soD5gN1p-0s78EWinBztykwnmNtFxLhHyfVC6hR2xIlI5YgSVEV4D-bxheixOmHxahH6PYLEKc" alt="Signature Dish" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white text-sm font-medium uppercase tracking-wider">Traditional Flavor</p>
+                    </div>
+                </div>
+
+                <!-- Dish Showcase 2 -->
+                <div class="gallery-container relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwerkvb4zknr96lg2QyiAd4QEauR5Nli_0tzNnDMCBJ-7kUNlk4ZwuCHQatlgOCFZnW7r8tNtLcLUdKn_wTmGxo2s9LUiYzO0HxLS2koT5k_u38e6zM2yV-CPOhakf1946FPh6cKxvQ" alt="Food Prep" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white text-sm font-medium uppercase tracking-wider">Chef's Special</p>
+                    </div>
+                </div>
+
+                <!-- Ambiance -->
+                <div class="gallery-container relative overflow-hidden rounded-xl shadow-lg aspect-square">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwerThQXcJLMjild67ZQzBb2Gcy_BvFkiRrn9lll--RUwa9BePHi_4JX2TOO7znq6EwgEwa5SI14mSL6q21_W3xmdGSJQsgDX-XMSmNtz14wLL4sDQp54qky1c-G5foBDDwvb7fMN" alt="Exterior View" class="gallery-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-white text-sm font-medium uppercase tracking-wider">Evening Ambiance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-stone-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <!-- Location Info -->
+                <div class="space-y-8">
+                    <h2 class="text-4xl mb-4 brand-font text-amber-500">Contact Details</h2>
+                    <p class="text-gray-400 max-w-md">We are dedicated to providing you with the best dining experience. Reach out to us for bookings or takeaway orders.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-amber-600/20 p-3 rounded-lg">
+                                <i class="fa-solid fa-location-dot text-amber-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-lg">Our Location</p>
+                                <p class="text-gray-400">Swad Veg Non-Veg, Mabhale, Sangameshwar,<br>Maharashtra 415611</p>
+                                <a href="https://maps.app.goo.gl/REdVLFbrA8k3fSha7" target="_blank" class="inline-block mt-4 bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-full text-sm font-semibold transition-all shadow-lg">
+                                    <i class="fa-solid fa-route mr-2"></i> Get Directions
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-amber-600/20 p-3 rounded-lg">
+                                <i class="fa-solid fa-phone text-amber-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-lg">Call Us</p>
+                                <p class="text-gray-400 text-xl tracking-wider">+91 73853 72349</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-green-600/20 p-3 rounded-lg">
+                                <i class="fa-brands fa-whatsapp text-green-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-lg">WhatsApp</p>
+                                <a href="https://wa.me/917385372349" class="text-gray-400 hover:text-white transition decoration-amber-500 underline underline-offset-4">Message us for quick orders</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inquiry Form -->
+                <div class="bg-white/5 p-8 rounded-2xl backdrop-blur-sm border border-white/5 shadow-2xl">
+                    <h3 class="text-2xl mb-6 font-semibold brand-font">Send a Message</h3>
+                    <form action="#" class="space-y-4">
+                        <div>
+                            <label class="block text-xs mb-1 text-gray-400 tracking-widest uppercase font-bold">Name</label>
+                            <input type="text" class="w-full bg-stone-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-600 outline-none transition" placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label class="block text-xs mb-1 text-gray-400 tracking-widest uppercase font-bold">Phone</label>
+                            <input type="tel" class="w-full bg-stone-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-600 outline-none transition" placeholder="Enter your phone number">
+                        </div>
+                        <div>
+                            <label class="block text-xs mb-1 text-gray-400 tracking-widest uppercase font-bold">Message</label>
+                            <textarea rows="4" class="w-full bg-stone-800 border-none rounded-lg p-3 text-white focus:ring-2 focus:ring-amber-600 outline-none transition" placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 rounded-lg transition-all shadow-lg uppercase tracking-widest text-sm">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-500 py-16 text-center border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="brand-font text-white text-4xl mb-4 tracking-widest uppercase">Swad</h2>
+            <p class="mb-8 italic font-light">"Authenticity in every bite."</p>
+            
+            <div class="flex justify-center space-x-8 mb-10 text-2xl text-white">
+                <a href="#" class="hover:text-amber-600 transition duration-300"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-amber-600 transition duration-300"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/917385372349" class="hover:text-amber-600 transition duration-300"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+
+            <div class="border-t border-white/5 pt-10 text-xs tracking-widest">
+                <p>&copy; 2024 Swad Veg Non-Veg. Sangameshwar, Maharashtra. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
